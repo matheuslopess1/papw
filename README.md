@@ -20,6 +20,16 @@ As ferramentas utilizadas foram:
 - env-var como invólucro a fim de melhorar a experiência em lidar com variáveis de ambiente
 - ts-node-dev para iniciar a aplicação com funcionalidades extras para aumentar a produtividade no desenvolvimento
 
-## Desafios
+### Desafios
 
 Os desafios encontrados foram aplicar os patterns aprendidos na disciplina, a fim de melhorar a organização do código, como os conceitos de entidades, repositórios, camada de serviços e DTO, onde todos são de muita importância na carreira de desenvolvedor como um todo, pois aplicam-se de maneira geral em quase qualquer projeto.
+
+### Diagrama
+![Imagem de um Diagama](docs/diagram.png)
+
+## Contribuidores
+
+- Matheus Inocêncio Lopes
+- Maria Alice Martins Silva
+- Gracielly de Araújo Pereira Lopes
+- Thiago Teixeira de Oliveira
