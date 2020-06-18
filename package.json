@@ -10,9 +10,6 @@
     "migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
   "dependencies": {
-    "@types/bcryptjs": "^2.4.2",
-    "@types/jsonwebtoken": "^8.5.0",
-    "@types/yup": "^0.29.3",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "env-var": "^6.2.0",
@@ -23,7 +20,10 @@
     "yup": "^0.29.1"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.6",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/yup": "^0.29.3",
     "ts-node-dev": "^1.0.0-pre.49",
     "typescript": "^3.9.5"
   }
