@@ -56,7 +56,9 @@ export default class ClientService {
 	}
 
 	public async destroy(id: string, userId: string) {
-		const client = await this.clientRepository.findOne(id);
+		const client = await this.clientRepository.findOne(id, {
+			relations: ["user"],
+		});
 
 		if (!client || client.user.id !== Number(userId)) {
 			return false;
