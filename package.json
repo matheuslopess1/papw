@@ -6,6 +6,8 @@
   "author": "Matheus Inocencio Lopes <matheuslopes1@protonmail.com>",
   "license": "MIT",
   "scripts": {
+		"build": "tsc",
+		"start": "dist/index.js",
     "dev": "tsnd --no-deps --no-notify --prefer-ts  src/index.ts",
     "migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
