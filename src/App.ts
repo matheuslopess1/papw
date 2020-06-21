@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import Routes from "./Routes";
 
 export default class App {
@@ -13,6 +14,7 @@ export default class App {
 
 	private middleware() {
 		this.express.use(express.json());
+		this.express.use(cors());
 	}
 
 	private routes() {
