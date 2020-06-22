@@ -9,8 +9,7 @@
 		"build": "tsc",
 		"postinstall": "npm run build",
 		"start": "node dist/index.js",
-    "dev": "tsnd --no-deps --no-notify --prefer-ts  src/index.ts",
-    "migrate": "knex --knexfile knexfile.ts migrate:latest"
+    "dev": "tsnd --no-deps --no-notify --prefer-ts  src/index.ts"
   },
   "dependencies": {
     "@types/cors": "^2.8.6",
