@@ -25,7 +25,10 @@ As ferramentas utilizadas foram:
 Os desafios encontrados foram aplicar os patterns aprendidos na disciplina, a fim de melhorar a organização do código, como os conceitos de entidades, repositórios, camada de serviços e DTO, onde todos são de muita importância na carreira de desenvolvedor como um todo, pois aplicam-se de maneira geral em quase qualquer projeto.
 
 ### Diagrama
+
 ![Imagem de um Diagama](docs/diagram.png)
+
+![Imagem do Diagrama da API](docs/api-diagram.png)
 
 ## Contribuidores
 
