@@ -8,7 +8,7 @@ export default class Database {
 		const config: ConnectionOptions = {
 			type: "sqlite",
 			database: path.resolve(__dirname, "..", "database", "database.sqlite"),
-			entities: [path.resolve(__dirname, "..", "app", "entities", "*.ts")],
+			entities: [path.resolve(__dirname, "..", "app", "entities", "*.{ts,js}")],
 			synchronize: true,
 			logging: false,
 		};
