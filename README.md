@@ -5,6 +5,8 @@ Repositório para disciplina de Programação Avançada Para Web do curso de Ci�
 
 Neste repositório foi construido uma API REST para gerenciamento de clientes, com funcionalidades como autenticação de usuário e validação de dados.
 
+### [Resumo](docs/resumo.md)
+
 ### Ferramentas
 
 As ferramentas utilizadas foram:
