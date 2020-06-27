@@ -1,16 +1,18 @@
-import path from "path";
 import { ConnectionOptions } from "typeorm";
+import env from "env-var";
 
 export default class Database {
 	private constructor() {}
 
 	public static getConfig() {
+		const DATABASE_URL = env.get("DATABASE_URL").required().asUrlString();
+
 		const config: ConnectionOptions = {
-			type: "sqlite",
-			database: path.resolve(__dirname, "..", "database", "database.sqlite"),
-			entities: [path.resolve(__dirname, "..", "app", "entities", "*.{ts,js}")],
+			type: "postgres",
+			url: DATABASE_URL,
 			synchronize: true,
 			logging: false,
+			entities: ["src/app/entities/*.ts"],
 		};
 
 		return config;
