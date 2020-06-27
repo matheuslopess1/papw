@@ -6,9 +6,9 @@
   "author": "Matheus Inocencio Lopes <matheuslopes1@protonmail.com>",
   "license": "MIT",
   "scripts": {
-		"build": "tsc",
-		"postinstall": "npm run build",
-		"start": "node dist/index.js",
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "start": "node dist/index.js",
     "dev": "tsnd --no-deps --no-notify --prefer-ts  src/index.ts"
   },
   "dependencies": {
