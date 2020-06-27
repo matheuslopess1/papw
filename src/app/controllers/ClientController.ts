@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import ClientService from "../services/ClientService";
-import UserDTO from "../DTOs/UserDTO";
 import ClientDTO from "../DTOs/ClientDTO";
 
 export default class ClientController {
@@ -11,7 +10,9 @@ export default class ClientController {
 
 		const clients = await this.service.getAll(userId);
 
-		const clientsDTOs = clients?.map((client) => new ClientDTO(client));
+		if (!clients) return res.json([]);
+
+		const clientsDTOs = clients.map((client) => new ClientDTO(client));
 
 		return res.json(clientsDTOs);
 	};
@@ -22,13 +23,11 @@ export default class ClientController {
 
 		const client = await this.service.get(id, userId);
 
-		if (client) {
-			const clientDTO = new ClientDTO(client);
+		if (!client) return res.status(404).json();
 
-			return res.json(clientDTO);
-		}
+		const clientDTO = new ClientDTO(client);
 
-		return res.status(404).json();
+		return res.json(clientDTO);
 	};
 
 	public store = async (req: Request, res: Response) => {
@@ -51,13 +50,11 @@ export default class ClientController {
 
 		const client = await this.service.update(id, data, userId);
 
-		if (client) {
-			const clientDTO = new ClientDTO(client);
+		if (!client) return res.status(404).json();
 
-			return res.json(clientDTO);
-		}
+		const clientDTO = new ClientDTO(client);
 
-		return res.status(404).json();
+		return res.json(clientDTO);
 	};
 
 	public destroy = async (req: Request, res: Response) => {

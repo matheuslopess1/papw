@@ -36,13 +36,11 @@ export default class UserController {
 
 		const user = await this.service.update(userId, data);
 
-		if (user) {
-			const userDTO = new UserDTO(user);
+		if (!user) return res.status(404).json();
 
-			return res.json(userDTO);
-		}
+		const userDTO = new UserDTO(user);
 
-		return res.status(404).json();
+		return res.json(userDTO);
 	};
 
 	public destroy = async (req: Request, res: Response) => {

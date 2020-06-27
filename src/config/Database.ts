@@ -12,7 +12,7 @@ export default class Database {
 			url: DATABASE_URL,
 			synchronize: true,
 			logging: false,
-			entities: ["src/app/entities/*.ts"],
+			entities: [`${__dirname}/../app/entities/*.{ts,js}`],
 		};
 
 		return config;
