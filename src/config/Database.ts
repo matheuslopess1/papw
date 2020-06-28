@@ -12,7 +12,8 @@ export default class Database {
 			url: DATABASE_URL,
 			synchronize: true,
 			logging: false,
-			entities: [`${__dirname}/../app/entities/*.{ts,js}`],
+			entities: [__dirname + "/../app/entities/*.{ts,js}"],
+			subscribers: [__dirname + "/../app/subscribers/*.{ts,js}"],
 		};
 
 		return config;

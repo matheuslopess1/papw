@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import * as yup from "yup";
+
 import Validator from "../../config/Validator";
 
 yup.setLocale(Validator.getCustomLocale());

@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+
 import Routes from "./Routes";
 
 export default class App {

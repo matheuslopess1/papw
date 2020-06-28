@@ -1,9 +1,12 @@
 import { Router } from "express";
+
 import UserController from "./app/controllers/UserController";
 import SessionController from "./app/controllers/SessionController";
 import ClientController from "./app/controllers/ClientController";
+
 import auth from "./app/middlewares/auth";
 import validate from "./app/middlewares/validate";
+
 import UserValidator from "./app/validators/UserValidator";
 import ClientValidator from "./app/validators/ClientValidator";
 

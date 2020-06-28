@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import env from "env-var";
+
 import Connection from "./database/Connection";
 import App from "./App";
 

@@ -1,34 +1,40 @@
 import { Request, Response, NextFunction } from "express";
 import env from "env-var";
 import jwt from "jsonwebtoken";
+
 import UserService from "../services/UserService";
 
 export default function auth(req: Request, res: Response, next: NextFunction) {
 	const { authorization } = req.headers;
 
-	if (authorization) {
-		const [type, token] = authorization.split(" ", 2);
+	if (!authorization)
+		return res
+			.status(401)
+			.json({ message: "Chave de autorização não informada" });
 
-		if (type === "Bearer" && token) {
-			try {
-				const SECRET = env.get("SECRET").required().asString();
+	const [type, token] = authorization.split(" ", 2);
 
-				const userId = jwt.verify(token, SECRET);
+	if (type !== "Bearer")
+		return res.status(401).json({ message: "Token do tipo inválido" });
 
-				const userService = new UserService();
+	if (!token) return res.status(401).json({ message: "Token não informado" });
 
-				const user = userService.get(String(userId));
+	try {
+		const SECRET = env.get("SECRET").required().asString();
 
-				if (user) {
-					res.locals = { ...res.locals, userId };
+		const userId = jwt.verify(token, SECRET);
 
-					return next();
-				}
-			} catch (err) {
-				//
-			}
-		}
+		const userService = new UserService();
+
+		const user = userService.get(String(userId));
+
+		if (!user)
+			return res.status(401).json({ message: "Usuário não encontrado" });
+
+		res.locals = { ...res.locals, userId };
+
+		return next();
+	} catch (err) {
+		return res.status(401).json({ message: "Token inválido ou expirado" });
 	}
-
-	return res.status(401).json({ message: "Token inválido ou expirado" });
 }
