@@ -33,7 +33,15 @@ export default class ClientService {
 	}
 
 	public async create(body: DeepPartial<Client>, userId: string) {
-		const user = await this.userRepository.findOne(userId);
+		if (userId == null) return undefined;
+
+		const id = Number(userId);
+
+		if (isNaN(id)) return undefined;
+
+		const user = new User();
+
+		user.id = id;
 
 		if (user) {
 			const client_created = this.clientRepository.create({ ...body, user });
