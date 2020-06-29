@@ -7,16 +7,16 @@ export default class Client {
 	@PrimaryGeneratedColumn()
 	id!: number;
 
-	@Column()
+	@Column({ length: 50, nullable: false })
 	name!: string;
 
-	@Column()
+	@Column({ length: 11, nullable: false })
 	phone_number!: string;
 
-	@Column()
+	@Column({ length: 8, nullable: false })
 	zip_code!: string;
 
-	@Column()
+	@Column({ length: 5, nullable: false })
 	address_number!: string;
 
 	@ManyToOne(() => User, (user) => user.clients)
